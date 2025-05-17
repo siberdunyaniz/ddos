@@ -1,16 +1,14 @@
-# Otomatik Pip Kurulum Scripti (Yeni Kütüphaneler için)
-
 import subprocess
 import sys
 import importlib
-import time  # time modülünü içe aktardık
+import time 
 
-# Gerekli kütüphaneler listesi (pip ile kurulacaklar)
+
 required_packages = {
     "pystyle": "pystyle"
 }
 
-# Standart kütüphaneler (kurulum gerektirmeyenler)
+
 standard_libs = ["os", "time", "random", "sys", "webbrowser", "subprocess"]
 
 def check_and_install_packages():
@@ -28,7 +26,7 @@ def check_and_install_packages():
                 print(f"❌ {package_name} yüklenirken hata oluştu: {e}")
                 sys.exit(1)
 
-    # Standart kütüphaneleri kontrol et (bilgi amaçlı)
+
     print("\n📋 Standart kütüphaneler kontrol ediliyor...")
     for lib in standard_libs:
         try:
@@ -43,7 +41,7 @@ def loading_animation():
         for x in lix:
             sys.stdout.write(f"\r🔍 Kurulumlar kontrol ediliyor {x}")
             sys.stdout.flush()
-            time.sleep(0.25)  # time modülü tanımlı
+            time.sleep(0.25)  
     print("\r✅ Kontrol tamamlandı!")
 
 if __name__ == "__main__":
